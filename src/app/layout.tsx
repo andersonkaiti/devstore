@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Suspense } from 'react'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -21,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${inter} antialiased`} lang="pt-BR">
-      <body className="bg-zinc-950 text-zinc-50">{children}</body>
+      <body className="bg-zinc-950 text-zinc-50">
+        <Suspense>{children}</Suspense>
+      </body>
     </html>
   )
 }
