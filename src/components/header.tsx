@@ -1,5 +1,6 @@
-import { Search, ShoppingBag } from 'lucide-react'
+import { Search } from 'lucide-react'
 import Link from 'next/link'
+import { CartWidget } from './cart-widget'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { Separator } from './ui/separator'
 
@@ -21,10 +22,7 @@ export function Header() {
         </form>
       </div>
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2">
-          <ShoppingBag className="size-4" />
-          <span className="text-sm">Cart (0)</span>
-        </div>
+        <CartWidget />
 
         <Separator className="!h-5 bg-zinc-700" orientation="vertical" />
 
