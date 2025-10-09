@@ -1,10 +1,23 @@
 import { getProduct } from '@http/get-product'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 
 interface IProductPageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+export async function generateMetadata({
+  params,
+}: IProductPageProps): Promise<Metadata> {
+  const { slug } = await params
+
+  const product = await getProduct(slug)
+
+  return {
+    title: product.title,
+  }
 }
 
 const TWELVE_MONTHS = 12
