@@ -1,33 +1,53 @@
+import { getProduct } from '@http/get-product'
 import Image from 'next/image'
 
-export default function ProductPage() {
+interface IProductPageProps {
+  params: Promise<{
+    slug: string
+  }>
+}
+
+const TWELVE_MONTHS = 12
+
+export default async function ProductPage({ params }: IProductPageProps) {
+  const { slug } = await params
+
+  const product = await getProduct(slug)
+
   return (
     <div className="relative grid max-h-[860px] grid-cols-3">
       <div className="col-span-2 overflow-hidden">
         <Image
-          alt=""
+          alt={product.title}
           height={1000}
           quality={100}
-          src="/moletom-never-stop-learning.png"
+          src={product.image}
           width={1000}
         />
       </div>
 
       <div className="flex flex-col justify-center px-12">
-        <h1 className="font-bold text-3xl leading-tight">
-          Moletom Never Stop Learning
-        </h1>
+        <h1 className="font-bold text-3xl leading-tight">{product.title}</h1>
 
         <p className="mt-2 text-zinc-400 leading-relaxed">
-          Moletom fabricado com 88% de algodão e 12% de poliéster.
+          {product.description}
         </p>
 
         <p className="mt-8 flex items-center gap-3">
           <span className="inline-block rounded-full bg-violet-500 px-5 py-2.5 font-semibold">
-            R$ 129
+            {product.price.toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            })}
           </span>
           <span className="text-sm text-zinc-400">
-            Em 12x s/ juros de R$ 10,75
+            Em 12x s/ juros de{' '}
+            {(product.price / TWELVE_MONTHS).toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
           </span>
         </p>
 
