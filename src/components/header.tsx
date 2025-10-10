@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { CartWidget } from './cart-widget'
 import { SearchForm } from './search-form'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -12,7 +13,9 @@ export function Header() {
           devstore
         </Link>
 
-        <SearchForm />
+        <Suspense fallback={null}>
+          <SearchForm />
+        </Suspense>
       </div>
       <div className="flex items-center gap-4">
         <CartWidget />

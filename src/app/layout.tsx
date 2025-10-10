@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html className={`${inter} antialiased`} lang="pt-BR">
       <body className="bg-zinc-950 text-zinc-50">
-        <Suspense>{children}</Suspense>
+        {children}
       </body>
     </html>
   )
