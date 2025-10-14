@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
-    "types": ["cypress"],
+    "types": [
+      "cypress"
+    ],
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -12,7 +18,7 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -21,15 +27,37 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@config/*": ["./src/config/*"],
-      "@contexts/*": ["./src/contexts/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@http/*": ["./src/http/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@/*": ["./src/*"]
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@config/*": [
+        "./src/config/*"
+      ],
+      "@contexts/*": [
+        "./src/contexts/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@http/*": [
+        "./src/http/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next\\dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
