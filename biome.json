@@ -43,6 +43,5 @@
       }
     }
   },
-  "extends": ["ultracite"],
-  "plugins": ["cypress"]
+  "extends": ["ultracite"]
 }
