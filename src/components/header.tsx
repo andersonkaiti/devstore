@@ -20,7 +20,7 @@ export function Header() {
             </Suspense>
           </div>
         </div>
-        
+
         <div className="flex items-center gap-4">
           <CartWidget />
 
@@ -42,7 +42,7 @@ export function Header() {
           </Link>
         </div>
       </header>
-      
+
       <div className="md:hidden">
         <Suspense fallback={null}>
           <SearchForm />
