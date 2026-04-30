@@ -11,9 +11,9 @@ export default async function Home() {
   const [highlightedProduct, ...otherProducts] = await getFeaturedProducts()
 
   return (
-    <div className="grid max-h-[860px] grid-cols-9 grid-rows-6 gap-6">
+    <div className="grid md:max-h-[860px] grid-cols-1 md:grid-cols-9 md:grid-rows-6 gap-6">
       <Link
-        className="group relative col-span-6 row-span-6 flex items-start justify-center overflow-hidden rounded-lg bg-zinc-900"
+        className="group relative md:col-span-6 md:row-span-6 flex items-start justify-center overflow-hidden rounded-lg bg-zinc-900"
         href={`/product/${highlightedProduct.slug}`}
       >
         <Image
@@ -25,7 +25,7 @@ export default async function Home() {
           width={920}
         />
 
-        <div className="absolute right-28 bottom-28 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
+        <div className="absolute right-8 bottom-8 md:right-28 md:bottom-28 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
           <span className="truncate text-sm">{highlightedProduct.title}</span>
 
           <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">
@@ -40,7 +40,7 @@ export default async function Home() {
 
       {otherProducts?.map((product) => (
         <Link
-          className="group relative col-span-3 row-span-3 flex items-start justify-center overflow-hidden rounded-lg bg-zinc-900"
+          className="group relative md:col-span-3 md:row-span-3 flex items-start justify-center overflow-hidden rounded-lg bg-zinc-900"
           href={`/product/${product.slug}`}
           key={product.id}
         >
@@ -53,7 +53,7 @@ export default async function Home() {
             width={920}
           />
 
-          <div className="absolute right-10 bottom-10 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
+          <div className="absolute right-8 bottom-8 md:right-10 md:bottom-10 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
             <span className="truncate text-sm">{product.title}</span>
 
             <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">

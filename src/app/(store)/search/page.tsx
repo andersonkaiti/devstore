@@ -24,7 +24,7 @@ export default async function SearchPage({ searchParams }: ISearchPageProps) {
         Resultados para: <span className="font-semibold">{query}</span>
       </p>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products?.map((product) => (
           <Link
             className="group relative flex items-start justify-center overflow-hidden rounded-lg bg-zinc-900"
@@ -40,7 +40,7 @@ export default async function SearchPage({ searchParams }: ISearchPageProps) {
               width={480}
             />
 
-            <div className="absolute right-10 bottom-10 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
+            <div className="absolute right-4 bottom-4 md:right-10 md:bottom-10 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
               <span className="truncate text-sm">{product.title}</span>
 
               <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">

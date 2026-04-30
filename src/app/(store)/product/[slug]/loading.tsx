@@ -2,10 +2,10 @@ import { Skeleton } from '@components/ui/skeleton'
 
 export default function Loading() {
   return (
-    <div className="relative grid h-[860px] grid-cols-3">
-      <Skeleton className="col-span-2" />
+    <div className="relative grid md:h-[860px] grid-cols-1 md:grid-cols-3">
+      <Skeleton className="md:col-span-2 h-[400px] md:h-full" />
 
-      <div className="flex flex-col justify-center px-12">
+      <div className="flex flex-col justify-center px-4 md:px-12 mt-8 md:mt-0">
         <Skeleton className="mb-4 h-10 w-2/3" />
 
         <Skeleton className="mb-2 h-4 w-full" />

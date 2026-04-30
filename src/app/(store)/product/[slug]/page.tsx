@@ -29,8 +29,8 @@ export default async function ProductPage({ params }: IProductPageProps) {
   const product = await getProduct(slug)
 
   return (
-    <div className="relative grid max-h-[860px] grid-cols-3">
-      <div className="col-span-2 overflow-hidden">
+    <div className="relative grid md:max-h-[860px] grid-cols-1 md:grid-cols-3">
+      <div className="md:col-span-2 overflow-hidden">
         <Image
           alt={product.title}
           height={1000}
@@ -40,7 +40,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
         />
       </div>
 
-      <div className="flex flex-col justify-center px-12">
+      <div className="flex flex-col justify-center px-4 md:px-12 mt-8 md:mt-0">
         <h1 className="font-bold text-3xl leading-tight">{product.title}</h1>
 
         <p className="mt-2 text-zinc-400 leading-relaxed">
