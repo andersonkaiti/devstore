@@ -34,6 +34,7 @@ export default async function ProductPage({ params }: IProductPageProps) {
         <Image
           alt={product.title}
           height={1000}
+          priority
           quality={100}
           src={product.image}
           width={1000}

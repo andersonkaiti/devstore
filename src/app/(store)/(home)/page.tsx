@@ -20,6 +20,7 @@ export default async function Home() {
           alt={highlightedProduct.title}
           className="transition-transform duration-500 group-hover:scale-105"
           height={920}
+          priority
           quality={100}
           src={highlightedProduct.image}
           width={920}
